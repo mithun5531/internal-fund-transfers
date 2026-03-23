@@ -1,0 +1,10 @@
+bin/
+loadtest/
+coverage.out
+coverage.html
+IMPLEMENTATION.md
+.env
+.git
+.gitignore
+*.md
+!README.md
