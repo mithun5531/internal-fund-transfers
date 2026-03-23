@@ -29,6 +29,42 @@ A Go HTTP service for processing internal fund transfers between accounts, backe
 
 ---
 
+## Prerequisites
+
+| Requirement | Version | Notes |
+|-------------|---------|-------|
+| Git | Any | For cloning the repository |
+| Docker + Docker Compose | Engine 20.10+, Compose v2 | Required for Option A and B |
+| Colima | Latest | macOS only, alternative to Docker Desktop |
+| Go | 1.23+ | Required for Option C (local development) |
+| PostgreSQL | 16+ | Required for Option C (local development) |
+| make | Any | Required for Option C (`make run`, `make test`) |
+
+> You only need the tools for your chosen setup method. For **Option A** (Docker Desktop) or **Option B** (Colima), Go and PostgreSQL are not required on your machine — everything runs inside containers.
+
+---
+
+## Installation
+
+### 1. Clone the repository
+
+```bash
+git clone <repo-url>
+cd internal-fund-transfers
+```
+
+### 2. Download Go dependencies
+
+```bash
+go mod download
+go mod verify
+```
+
+> This step is optional for Docker-based setups (Options A and B) — dependencies are downloaded inside the container during `docker compose up --build`. It is required for Option C (local development) before running `make run` or `make test`.
+
+---
+
+
 ## Setup
 
 Choose **one** of the three methods below. All three result in the API running at `http://localhost:8080`.
