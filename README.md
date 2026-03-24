@@ -3,14 +3,14 @@
 A Go HTTP service for processing internal fund transfers between accounts, backed by PostgreSQL. Provides full ACID guarantees, deadlock-free concurrency via pessimistic row-level locking, and idempotent transaction processing.
 
 ## Features
-
+- **Account Creation** - Create accounts with initial balances
+- **Account Balance** -  Query account balances
+- **Fund Transfer** - Transfer funds between accounts
+- **Structured Logging** - Transaction logging for audit trails
+- **Data Integrity** - Data integrity with database transactions
+- **Error Handling** -  Proper error handling and validation
 - **Atomic transfers** — fund transfers with full ACID guarantees
 - **Concurrency-safe** — pessimistic row-level locking with deadlock prevention via ordered lock acquisition
-- **Idempotent transactions** — optional `Idempotency-Key` header prevents double-processing under retries
-- **Decimal precision** — `NUMERIC(30,10)` in PostgreSQL, `shopspring/decimal` in Go — zero floating-point drift
-- **Automatic retry** — exponential backoff with jitter on transient PostgreSQL errors
-- **Structured logging** — Zap JSON logger with request-scoped `X-Request-ID`
-- **Graceful shutdown** — SIGTERM drains in-flight requests with a 30s timeout
 
 ## Tech Stack
 
